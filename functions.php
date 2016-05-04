@@ -353,23 +353,6 @@ function are_we_live(){
   }
 }
 
-/*
-get_development_scripts() tests our environment with are_we_live()
-@returns the appropriate scripts if local
-
-use [grunt sync] to get ports for the last three scripts
-*/
-function get_development_scripts(){
-
-  if ( !are_we_live() ){
-    $devscripts = include( 'library/dev-scripts.php' );
-    return $devscripts;
-  }
-
-}
-
-
-
 // Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
 		'comment-list',

@@ -1598,7 +1598,6 @@ body.active-mobile .header-nav {
 
 .active-mobile .show-nav {
 	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
@@ -1688,14 +1687,14 @@ a.vcuarts-fallback {
 .vcu-color,
 .arts-color {
 	opacity: 0;
-	-webkit-transition: opacity 0.15s ease-in-out;
-	transition: opacity 0.15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+	transition: opacity .15s ease-in-out;
 }
 
 .vcu-dk,
 .arts-dk {
-	-webkit-transition: opacity 0.15s ease-in-out;
-	transition: opacity 0.15s ease-in-out;
+	-webkit-transition: opacity .15s ease-in-out;
+	transition: opacity .15s ease-in-out;
 }
 
 .vcu-name {
