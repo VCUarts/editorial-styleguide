@@ -40,31 +40,10 @@ module.exports = function(grunt) {
             }
         },
 
-        browserSync: {
-            files: {
-                src : 'library/css/style.css'
-            },
-            options: {
-                watchTask: true // < VERY important
-            }
-            // ,
-            // options: {
-            //     proxy: "vcuartsbones.dev"
-            // }
-        },
-
         autoprefixer: {
             dist: {
                 files: {
                     'library/css/style.css' : 'library/css/style.css'
-                }
-            }
-        },
-
-        cmq: {
-            your_target: {
-                files: {
-                    'library/css' : 'library/css/style.css'
                 }
             }
         },
@@ -104,20 +83,9 @@ module.exports = function(grunt) {
             }
         },
 
-        imagemin: {
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'library/images/',
-                    src: ['**/*.{png,jpg,gif,svg,ico}'],
-                    dest: 'library/images/'
-                }]
-            }
-        },
-
         concurrent: {
             watch: {
-                tasks: ['watch', 'sass', 'browserSync'],
+                tasks: ['watch', 'sass'],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -130,7 +98,6 @@ module.exports = function(grunt) {
     // Sass
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // JS
@@ -138,16 +105,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
-    // Images
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-
     // Browser Reload + File Watch
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-browser-sync');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('init', ['build']);
-    grunt.registerTask('dev', ['browserSync','watch']);
-    grunt.registerTask('build', ['sass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('dev', ['watch']);
+    grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
 };
