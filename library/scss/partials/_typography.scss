@@ -15,7 +15,8 @@ http://alistapart.com/column/responsive-typography-is-a-physical-discipline
 
 ******************************************************************/
 
-@import url(http://fonts.googleapis.com/css?family=Abel);
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
+
 /*********************
 FONT FACE (IN YOUR FACE)
 *********************/
@@ -49,8 +50,8 @@ I've edited it a bit, but it's a nice starting point.
 
 
 // font stacks
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Abel", Cambria, Times New Roman, Times, serif;
+$sans-serif:             "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 /*
 some nice typographical defaults
