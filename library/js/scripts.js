@@ -101,7 +101,10 @@ $('.children .page_item').on('click', function() {
   });
   $self.addClass('current');
 });
-  
+
+$('.page_item').click(function(e) {
+  $(e.target).next('ul').slideToggle();
+});
   
 
 
