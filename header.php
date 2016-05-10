@@ -80,6 +80,9 @@
 		                'walker' => new Skips_Walker(),
 		              );
 		              wp_list_pages( $args );
+		              // @todo
+		              // this might need to be two menus
+		              // one for the A-Z list and one for the Intro and Resources
 		            ?>
 					
 		            <!-- Sidebar start -->
