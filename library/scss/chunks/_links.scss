@@ -6,6 +6,7 @@ a, a:visited {
   color: $link-color;
   text-decoration: none;
   outline:none;
+  transition: color 0.2s ease-in-out;
 
   /* on hover */
   &:hover, &:focus {
@@ -31,16 +32,15 @@ a, a:visited {
 }
 
 a.button {
-  background:$white;
-  color:$white;
-  padding:10px 20px;
-  font-family:$serif;
-  font-size:1em;
-  transition:all 0.4s ease;
-  border: 3px solid $f-red;
+  background: #eee;
+  color: $black;
+  padding: 10px 20px;
+  font-family: $serif;
+  font-size: 1em;
+  transition: all 0.4s ease;
+
   &:hover {
-    background:$gold;
-    color:$white;
-    border: 3px solid $gold;
+    background: $f-red;
+    color: $white;
   }
 }
