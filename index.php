@@ -13,7 +13,11 @@
 
 								<header class="article-header">
 
-									<h1 class="page-title-head" itemprop="headline"><?php the_title(); ?></h1>
+									<?php if (0 == $post->post_parent): ?>
+										<h1 class="page-title-head" itemprop="headline"><?php the_title(); ?></h1>
+									<?php else: ?>
+										<h2 class="page-title-head" itemprop="headline"><?php the_title(); ?></h2>
+									<?php endif; ?>
 
 								</header> <?php // end article header ?>
 
