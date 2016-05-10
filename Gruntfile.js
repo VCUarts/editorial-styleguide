@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'library/css/style.css' : 'library/css/style.css'
+                    'library/css/main.css' : 'library/css/main.css'
                 }
             }
         },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'library/css/style.min.css': ['library/css/style.css']
+                    'library/css/main.min.css': ['library/css/main.css']
                 }
             }
         },
