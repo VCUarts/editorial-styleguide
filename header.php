@@ -11,7 +11,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php wp_title( '' ); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -27,10 +27,10 @@
 		<?php // or, set /favicon.ico for IE10 win ?>
 		<meta name="msapplication-TileColor" content="#f01d4f">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-            <meta name="theme-color" content="#121212">
+    <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 		<?php // wordpress head functions ?>
@@ -46,10 +46,8 @@
   
 			<div class="vcubar">
 			    <div class="inner-vcubar">
-			      <a href="http://vcu.edu" target="_blank" class="vcu"><?php include (TEMPLATEPATH . '/library/images/svg/logo-vcu.svg'); ?></a>
-			      <a href="http://vcu.edu" target="_blank" class="vcu-fallback"></a>
-			      <a href="http://arts.vcu.edu" target="_blank" class="vcuarts"><?php include (TEMPLATEPATH . '/library/images/svg/logo-vcuarts.svg'); ?></a>
-			      <a href="http://arts.vcu.edu" target="_blank" class="vcuarts-fallback"></a>
+			      <a href="http://vcu.edu" target="_blank" class="vcu"><?php include( TEMPLATEPATH . '/library/images/svg/logo-vcu.svg' ); ?></a>
+			      <a href="http://arts.vcu.edu" target="_blank" class="vcuarts"><?php include( TEMPLATEPATH . '/library/images/svg/logo-vcuarts.svg' ); ?></a>
 			    </div>
  			 </div>
 
@@ -59,8 +57,8 @@
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<div id="logo" itemscope itemtype="http://schema.org/Organization">
-						<a class="h2" href="<?php echo home_url(); ?>" rel="nofollow">
-							<?php bloginfo('name'); ?>
+						<a class="h2" href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">
+							<?php bloginfo( 'name' ); ?>
 						</a>
 					</div>
 
@@ -77,11 +75,11 @@
 		                'post_type'    => 'page',
 		                'post_status'  => 'publish',
 		                'sort_column'  => 'menu_order, post_title',
-		                      'sort_order'   => '',
-		                'title_li'     => __(''), 
-		                'walker' => new skips_walker()
-		              ); 
-		              wp_list_pages( $args ); 
+                    'sort_order'   => '',
+		                'title_li'     => __( '' ),
+		                'walker' => new skips_walker(),
+		              );
+		              wp_list_pages( $args );
 		            ?>
 					
 		            <!-- Sidebar start -->
