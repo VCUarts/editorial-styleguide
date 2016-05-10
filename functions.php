@@ -422,6 +422,12 @@ class skips_walker extends Walker_Page {
   }
 }
 
-
+function style_guide_index( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'post_type', 'page' );
+        $query->set( 'posts_per_page', 500 );
+    }
+}
+add_action( 'pre_get_posts', 'style_guide_index' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
