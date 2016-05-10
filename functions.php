@@ -240,6 +240,7 @@ function style_guide_index( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
         $query->set( 'post_type', 'page' );
         $query->set( 'posts_per_page', 500 );
+        $query->set( 'order', 'ASC' );
     }
 }
 add_action( 'pre_get_posts', 'style_guide_index' );
