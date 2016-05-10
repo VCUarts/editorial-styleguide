@@ -74,8 +74,8 @@
 		                'link_before'  => '',
 		                'post_type'    => 'page',
 		                'post_status'  => 'publish',
-		                'sort_column'  => 'menu_order, post_title',
-                    'sort_order'   => '',
+		                'sort_column'  => 'post_title',
+                    'sort_order'   => 'ASC',
 		                'title_li'     => __( '' ),
 		                'walker' => new skips_walker(),
 		              );
