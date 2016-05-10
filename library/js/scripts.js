@@ -43,95 +43,28 @@ var waitForFinalEvent = (function () {
 // how long to wait before deciding the resize has stopped, in ms. Around 50-100 should work ok.
 var timeToWaitForLast = 100;
 
-
-/*
- * Here's an example so you can see how we're using the above function
- *
- * This is commented out so it won't work, but you can copy it and
- * remove the comments.
- *
- *
- *
- * If we want to only do it on a certain page, we can setup checks so we do it
- * as efficient as possible.
- *
- * if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
- *
- * This once checks to see if you're on the home page based on the body class
- * We can then use that check to perform actions on the home page only
- *
- * When the window is resized, we perform this function
- * $(window).resize(function () {
- *
- *    // if we're on the home page, we wait the set amount (in function above) then fire the function
- *    if( is_home ) { waitForFinalEvent( function() {
- *
- *	// update the viewport, in case the window size has changed
- *	viewport = updateViewportDimensions();
- *
- *      // if we're above or equal to 768 fire this off
- *      if( viewport.width >= 768 ) {
- *        console.log('On home page and window sized to 768 width or more.');
- *      } else {
- *        // otherwise, let's do this instead
- *        console.log('Not on home page, or window sized to less than 768.');
- *      }
- *
- *    }, timeToWaitForLast, "your-function-identifier-string"); }
- * });
- *
- * Pretty cool huh? You can create functions like this to conditionally load
- * content and other stuff dependent on the viewport.
- * Remember that mobile devices and javascript aren't the best of friends.
- * Keep it light and always make sure the larger viewports are doing the heavy lifting.
- *
-*/
-
-/*
- * We're going to swap out the gravatars.
- * In the functions.php file, you can see we're not loading the gravatar
- * images on mobile to save bandwidth. Once we hit an acceptable viewport
- * then we can swap out those images since they are located in a data attribute.
-*/
-function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
-	}
-} // end function
-
-
 /*
  * Put all your regular jQuery in here.
 */
 
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
-
-    //Mobile menu
-
-    $('.show-nav').click(function(e) {
+  //Mobile menu
+  $('.show-nav').click(function(e) {
     e.preventDefault();  
     $('body').toggleClass('active-mobile');        
   });
 
   // Initialize all .smoothScroll links
-  jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
+  jQuery(function($) { 
+    $.localScroll({ filter: '.smoothScroll' }); 
+  });
 
 
 // scrollspy init function
-function initScrollSpy(){
-    $('article.page').each(function(i) {
-    var position = $(this).position();
+function initScrollSpy() {
+  $('article.page').each(function(i) {
+  var position = $(this).position();
 
     $(this).scrollspy({
       min: position.top - 10,
@@ -140,6 +73,7 @@ function initScrollSpy(){
         $('.page_item').each(function(i){
           $(this).removeClass('current');
         });
+        
         $('.'+element.id).addClass('current');
       }
     });
@@ -150,23 +84,23 @@ function initScrollSpy(){
 initScrollSpy();
 
 // on resize clear current, wait for resize to complete and then init scrollspy again
-  $(window).resize(function () {
-    $('.page_item').each(function(i){
-      $(this).removeClass('current');
-    });
-
-   waitForFinalEvent( function() {
-    initScrollSpy();     
-   }, timeToWaitForLast, "setup that scrollspy again but not until we are done resizing that window"); 
+$(window).resize(function () {
+  $('.page_item').each(function(i) {
+    $(this).removeClass('current');
   });
 
-  $('.children .page_item').on('click', function(){
-    $this = $(this);
-    $('.children .page_item').each(function(i){
-      $(this).removeClass('current');
-    });
-    $this.addClass('current');
+ waitForFinalEvent( function() {
+  initScrollSpy();     
+ }, timeToWaitForLast, "setup that scrollspy again but not until we are done resizing that window"); 
+});
+
+$('.children .page_item').on('click', function() {
+  $self = $(this);
+  $('.children .page_item').each(function(i) {
+    $(this).removeClass('current');
   });
+  $self.addClass('current');
+});
   
   
 
