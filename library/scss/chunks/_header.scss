@@ -13,16 +13,16 @@ HEADER STYLES
 }
 
 #logo {
+    padding: 0 10px;
+    background: #eee;
+    border-top: 3px solid $f-red;
+    margin: 0;
+    transition: 0.7s ease;
+    text-align: center;
 
-    a {
-      color: $black;
+    svg {
+      max-width: 200px !important;
     }
-
-    padding:20px 20px 20px 20px;
-    background:#eee;
-    border-top:3px solid $f-red;
-    margin:0;
-    transition:0.7s ease;
 
     &:hover {
       border-top-color:$gold;
