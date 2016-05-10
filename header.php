@@ -77,7 +77,7 @@
 		                'sort_column'  => 'post_title',
                     'sort_order'   => 'ASC',
 		                'title_li'     => __( '' ),
-		                'walker' => new skips_walker(),
+		                'walker' => new Skips_Walker(),
 		              );
 		              wp_list_pages( $args );
 		            ?>

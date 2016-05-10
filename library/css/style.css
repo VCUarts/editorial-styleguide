@@ -1277,15 +1277,18 @@ body.active-mobile .header-nav {
         background: #777; }
       .header nav li a:active {
         background: #fdbb2a; }
-    .header nav li ul.sub-menu li a,
-    .header nav li ul.children li a {
-      padding-left: 50px;
-      color: #ccc;
-      font-size: 0.9em;
-      line-height: 1; }
-    .header nav li ul.sub-menu li.active a,
-    .header nav li ul.children li.active a {
-      color: red !important; }
+    .header nav li ul.sub-menu,
+    .header nav li ul.children {
+      display: none; }
+      .header nav li ul.sub-menu li a,
+      .header nav li ul.children li a {
+        padding-left: 50px;
+        color: #ccc;
+        font-size: 0.9em;
+        line-height: 1; }
+      .header nav li ul.sub-menu li.active a,
+      .header nav li ul.children li.active a {
+        color: red !important; }
   .header nav li.current_page_item a {
     background: #fff;
     color: #333333; }

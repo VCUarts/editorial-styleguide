@@ -106,14 +106,14 @@ new image size.
 
 /************* THEME CUSTOMIZE *********************/
 
-/* 
+/*
   A good tutorial for creating your own Sections, Controls and Settings:
   http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-  
+
   Good articles on modifying the default options:
   http://natko.com/changing-default-wordpress-theme-customization-api-sections/
   http://code.tutsplus.com/tutorials/digging-into-the-theme-customizer-components--wp-27162
-  
+
   To do:
   - Create a js for the postmessage transport method
   - Create some sanitize functions to sanitize inputs
@@ -123,7 +123,7 @@ new image size.
 function bones_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
-  // Uncomment the below lines to remove the default customize sections 
+  // Uncomment the below lines to remove the default customize sections
 
   // $wp_customize->remove_section('title_tagline');
   // $wp_customize->remove_section('colors');
@@ -133,7 +133,7 @@ function bones_theme_customizer($wp_customize) {
 
   // Uncomment the below lines to remove the default controls
   // $wp_customize->remove_control('blogdescription');
-  
+
   // Uncomment the following to change the default section titles
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
@@ -160,12 +160,12 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
 	) );
 
 /*
-are_we_live() is a function for testing our environment. 
+are_we_live() is a function for testing our environment.
 @returns true if on production server false if not
 */
 
 function are_we_live(){
-  $current_server = $_SERVER['HTTP_HOST']; 
+  $current_server = $_SERVER['HTTP_HOST'];
 
   if ( $current_server == 'arts.vcu.edu' ){
     return true;
@@ -175,59 +175,61 @@ function are_we_live(){
 }
 
 // Custom walker for Skips theme to spit out anchors instead of permalinks for child pages
-class skips_walker extends Walker_Page {
+class Skips_Walker extends Walker_Page {
   function start_lvl( &$output, $depth = 0, $args = array() ) {
-      $indent = str_repeat("\t", $depth);
+      $indent = str_repeat( "\t", $depth );
       $output .= "\n$indent<ul class='children'>\n";
   }
 
   function end_lvl( &$output, $depth = 0, $args = array() ) {
-      $indent = str_repeat("\t", $depth);
+      $indent = str_repeat( "\t", $depth );
       $output .= "$indent</ul>\n";
   }
 
   function start_el( &$output, $page, $depth = 0, $args = array(), $current_page = 0 ) {
-      if ( $depth )
-          $indent = str_repeat("\t", $depth);
-      else
-          $indent = '';
-      
-      extract($args, EXTR_SKIP);
-      $css_class = array('page_item', 'page-item-'.$page->ID);
-      if ( !empty($current_page) ) {
-          $_current_page = get_post( $current_page );
-          if ( in_array( $page->ID, $_current_page->ancestors ) )
-              $css_class[] = 'current_page_ancestor';
-          if ( $page->ID == $current_page )
-              $css_class[] = 'current_page_item';
-          elseif ( $_current_page && $page->ID == $_current_page->post_parent )
-              $css_class[] = 'current_page_parent';
+      if ( $depth ) {
+          $indent = str_repeat( "\t", $depth );
+      } else {
+        $indent = '';
       }
-      elseif ( $page->ID == get_option('page_for_posts') ) {
+
+      extract( $args, EXTR_SKIP );
+      $css_class = array( 'page_item', 'page-item-'.$page->ID );
+      if ( ! empty( $current_page ) ) {
+        $_current_page = get_post( $current_page );
+        if ( in_array( $page->ID, $_current_page->ancestors ) ) {
+          $css_class[] = 'current_page_ancestor';
+        }
+        if ( $page->ID == $current_page ) {
+            $css_class[] = 'current_page_item';
+        } elseif ( $_current_page && $page->ID == $_current_page->post_parent ) {
+            $css_class[] = 'current_page_parent';
+          }
+      } elseif ( get_option( 'page_for_posts' ) == $page->ID ) {
           $css_class[] = 'current_page_parent';
       }
-      
+
       $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
-      
-      if ($page->post_parent){          
+
+      if ( $page->post_parent ) {
           // figure out the parent such that we will get the right links even if we are not in family tree
-          $ancestors=get_post_ancestors($page->ID);
-          $root=count($ancestors)-1;
-          $parent = $ancestors[$root];
-          $permalink = get_permalink($parent);
+          $ancestors = get_post_ancestors( $page->ID );
+          $root = count( $ancestors ) - 1;
+          $parent = $ancestors[ $root ];
+          $permalink = get_permalink( $parent );
 
         $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="' . $permalink . '#page-item-' . $page->ID . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
       } else {
-        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="' . get_permalink( $page->ID ) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
       }
-      
-      if ( !empty($show_date) ) {
-          if ( 'modified' == $show_date )
-              $time = $page->post_modified;
-          else
-              $time = $page->post_date;
-              
-          $output .= " " . mysql2date($date_format, $time);
+
+      if ( ! empty( $show_date ) ) {
+          if ( 'modified' == $show_date ) {
+            $time = $page->post_modified;
+          } else {
+            $time = $page->post_date;
+          }
+          $output .= ' ' . mysql2date( $date_format, $time );
       }
   }
 
