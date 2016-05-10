@@ -1,20 +1,9 @@
-
 /*********************
 NAVIGATION STYLES
 *********************/
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-
-
 .header-nav {
 
-  // opacity: 0;
   @include breakpoint($breakpoint-mobile) {
     display:none;
   }
@@ -36,7 +25,6 @@ and more scalable.
      list-style-type:none;
       font-family:$serif;
       font-size: 1em;
-      line-height: 1.7;
 
     a {
       display:block;
@@ -55,10 +43,6 @@ and more scalable.
       }
     }
 
-    &:first-child {}
-
-    &:last-child {}
-
 
     ul.sub-menu,
     ul.children {
@@ -66,10 +50,13 @@ and more scalable.
       li {
 
         a {
+          display: block;
           padding-left: 50px;
-          color:#ccc;
-          font-size:0.9em;
-          line-height:1;
+          padding-bottom: 10px;
+          color: #ccc;
+          font-size: 0.9em;
+          line-height: 1.1;
+
 
           &:hover,
           &:focus {}

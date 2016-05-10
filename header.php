@@ -58,7 +58,7 @@
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<div id="logo" itemscope itemtype="http://schema.org/Organization">
 						<a class="h2" href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">
-							<?php bloginfo( 'name' ); ?>
+							<?php include( TEMPLATEPATH . '/library/images/svg/logo.svg' ); ?>
 						</a>
 					</div>
 
