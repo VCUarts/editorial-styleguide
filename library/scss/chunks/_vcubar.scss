@@ -1,4 +1,5 @@
 .vcubar{
+  padding-bottom: 10px;
   @include breakpoint($breakpoint-desktop) {
     @include span(last 9 of 12);
   }

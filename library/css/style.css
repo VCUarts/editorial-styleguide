@@ -1227,7 +1227,7 @@ HEADER STYLES
 #logo {
   padding: 20px 20px 20px 20px;
   background: #eee;
-  border-top: 5px solid #ed3043;
+  border-top: 3px solid #ed3043;
   margin: 0;
   transition: 0.7s ease; }
   #logo a {
@@ -1306,7 +1306,7 @@ body.active-mobile .header-nav {
   height: 45px;
   width: 45px;
   position: absolute;
-  top: 53px;
+  top: 68px;
   right: 15px;
   text-align: center;
   line-height: 35px;
@@ -1317,7 +1317,8 @@ body.active-mobile .header-nav {
   .show-nav:hover {
     color: #fff; }
   .active-mobile .show-nav {
-    transform: rotate(90deg); }
+    transform: rotate(90deg);
+    margin-top: -5px; }
   @media (min-width: 768px) {
     .show-nav {
       display: none;
@@ -1325,6 +1326,7 @@ body.active-mobile .header-nav {
       right: -99999px; } }
 
 .vcubar {
+  padding-bottom: 10px;
   position: relative; }
   @media (min-width: 768px) {
     .vcubar {
