@@ -1,5 +1,3 @@
-
-
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -10,6 +8,12 @@ POSTS & CONTENT STYLES
   @include breakpoint($breakpoint-mobile) {
     padding-left:1em;
     padding-right:1em;
+  }
+}
+
+article.page:first-child {
+  h1 {
+    display: none;
   }
 }
 

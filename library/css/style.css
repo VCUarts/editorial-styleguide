@@ -1420,6 +1420,9 @@ POSTS & CONTENT STYLES
       padding-left: 1em;
       padding-right: 1em; } }
 
+article.page:first-child h1 {
+  display: none; }
+
 .hentry {
   margin-bottom: 0em;
   overflow: hidden;
