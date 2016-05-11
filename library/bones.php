@@ -141,7 +141,7 @@ function bones_scripts_and_styles() {
     wp_register_script( 'bones-js-min', get_stylesheet_directory_uri() . '/library/js/dist/main.min.js', array( 'jquery' ), '', true );
 		
     // check environment before outputting appropriate stylesheet
-    if ( are_we_live() ){
+    if ( are_we_live() ) {
       wp_enqueue_style( 'bones-stylesheet-min' );  
       wp_enqueue_script( 'bones-js-min' );  
     } else {
