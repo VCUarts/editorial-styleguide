@@ -34,7 +34,7 @@ NAVIGATION STYLES
       transition:0.1s ease;
       outline:none;
 
-      &:hover, &:focus {
+      &:hover {
         color:$white;
         background:#777;
       }
@@ -84,14 +84,11 @@ NAVIGATION STYLES
 
   } /* end .menu li */
 
-  /* highlight current page */
-  li.current-menu-item {
-  }
   
   li.current {
     a {
-      background:$white;
-      color:$black;
+      color:$white;
+      background:#777;
     }
     ul li a {
       color:$black;
