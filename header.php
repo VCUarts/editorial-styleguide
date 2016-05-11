@@ -58,17 +58,43 @@
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<div id="logo" itemscope itemtype="http://schema.org/Organization">
 						<a class="h2" href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">
-							<?php include( TEMPLATEPATH . '/library/images/svg/logo.svg' ); ?>
+							Editorial Style Guide
 						</a>
 					</div>
 
 					<nav role="navigation" class="header-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
-								<?php
+                <?php
+                  $text_pages = array('resources', 'introduction');
+
+                  $exclude = '';
+                  foreach ( $text_pages as $path ){
+                    $page = get_page_by_path( $path );
+                    $exclude .= $page->ID . ',';
+                  }
+
+                  $extra_args = array(
+                    'child_of'     => 0,
+                    'depth'        => 0,
+                    'echo'         => 1,
+                    'exclude'      => '',
+                    'include'      => $exclude,
+                    'link_after'   => '',
+                    'link_before'  => '',
+                    'post_type'    => 'page',
+                    'post_status'  => 'publish',
+                    'sort_column'  => 'post_title',
+                    'sort_order'   => 'ASC',
+                    'title_li'     => __( '' ),
+                    'walker' => new Skips_Walker(),
+                  );
+                  wp_list_pages( $extra_args );
+
+
 		              $args = array(
 		                'child_of'     => 0,
 		                'depth'        => 0,
 		                'echo'         => 1,
-		                'exclude'      => '',
+		                'exclude'      => $exclude,
 		                'include'      => '',
 		                'link_after'   => '',
 		                'link_before'  => '',
@@ -80,9 +106,6 @@
 		                'walker' => new Skips_Walker(),
 		              );
 		              wp_list_pages( $args );
-		              // @todo
-		              // this might need to be two menus
-		              // one for the A-Z list and one for the Intro and Resources
 		            ?>
 					
 		            <!-- Sidebar start -->

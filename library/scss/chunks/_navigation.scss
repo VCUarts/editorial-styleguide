@@ -119,7 +119,7 @@ NAVIGATION STYLES
   height: 45px;
   width: 45px;
   position: absolute;
-  top: 68px;
+  top: 74px;
   right: 15px;
   text-align: center;
   line-height: 35px;
@@ -127,8 +127,9 @@ NAVIGATION STYLES
   box-sizing: content-box;
   cursor: pointer;
   transition: .2s ease-in-out;
+  
   &:hover {
-      color:$white;
+    color: $f-red;
   }
 
   .active-mobile &{
