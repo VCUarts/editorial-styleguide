@@ -102,7 +102,7 @@ $('.children .page_item').on('click', function() {
     $(this).removeClass('current');
   });
   $self.addClass('current');
-  $self.parents().filter('li').addClass('current');
+  // $self.parents().filter('li').addClass('current');
 });
 
 $('.page_item').click(function(e) {
