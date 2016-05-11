@@ -194,7 +194,7 @@ class Skips_Walker extends Walker_Page {
       }
 
       extract( $args, EXTR_SKIP );
-      $css_class = array( 'page_item', 'page-item-'.$page->ID );
+      $css_class = array( 'page_item', 'post-'.$page->ID );
       if ( ! empty( $current_page ) ) {
         $_current_page = get_post( $current_page );
         if ( in_array( $page->ID, $_current_page->ancestors ) ) {
@@ -243,6 +243,7 @@ function style_guide_index( $query ) {
         $query->set( 'post_type', 'page' );
         $query->set( 'posts_per_page', 500 );
         $query->set( 'order', 'ASC' );
+        $query->set( 'post_parent', '0' );
     }
 }
 add_action( 'pre_get_posts', 'style_guide_index' );

@@ -27,11 +27,30 @@
 									?>
 								</section> <?php // end article section ?>
 
+
 								<footer class="article-footer">
 
 								</footer>
 
 							</article>
+
+              <?php
+                $childArgs = array(
+                    'sort_order' => 'ASC',
+                    //'sort_column' => 'menu_order',
+                    'child_of' => get_the_ID()
+                );
+                $childList = get_pages($childArgs);
+                foreach ($childList as $child) { ?>
+
+                    <article id="post-<?php echo $child->ID; ?>" <?php echo $child->post_class; ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                        <h2 class="child-title"><?php echo $child->post_title; ?></h2>
+                        <section class="entry-content" itemprop="articleBody">
+                          <?php echo apply_filters( 'the_content', $child->post_content); ?>
+                        </section>
+                    </article>
+
+                <?php } ?>
 
 							<?php endwhile; else : ?>
 								<?php echo "sorry aint got nothing"; ?>

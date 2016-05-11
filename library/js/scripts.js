@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
 
 // scrollspy init function
 function initScrollSpy() {
-  $('article.page').each(function(i) {
+  $('article').each(function(i) {
   var position = $(this).position();
 
     $(this).scrollspy({
@@ -94,12 +94,15 @@ $(window).resize(function () {
  }, timeToWaitForLast, "setup that scrollspy again but not until we are done resizing that window"); 
 });
 
+
+
 $('.children .page_item').on('click', function() {
   $self = $(this);
   $('.children .page_item').each(function(i) {
     $(this).removeClass('current');
   });
   $self.addClass('current');
+  $self.parents().filter('li').addClass('current');
 });
 
 $('.page_item').click(function(e) {
