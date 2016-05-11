@@ -218,9 +218,9 @@ class Skips_Walker extends Walker_Page {
           $parent = $ancestors[ $root ];
           $permalink = get_permalink( $parent );
 
-        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="#">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="#post-' . $page->ID . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
       } else {
-        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="#">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+        $output .= $indent . '<li class="' . $css_class . '"><a class="smoothScroll" href="#post-' . $page->ID . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
       }
 
       if ( ! empty( $show_date ) ) {
