@@ -14,7 +14,7 @@
 								<header class="article-header">
 
 									<?php if (0 == $post->post_parent): ?>
-										<h1 class="page-title-head" itemprop="headline"><?php the_title(); ?></h1>
+										<h1 class="page-title-head <?php echo sanitize_title( the_title() ); ?>" itemprop="headline"><?php the_title(); ?></h1>
 									<?php else: ?>
 										<h2 class="page-title-head" itemprop="headline"><?php the_title(); ?></h2>
 									<?php endif; ?>
@@ -35,15 +35,15 @@
 							</article>
 
               <?php
-                $childArgs = array(
+                $child_args = array(
                     'sort_order' => 'ASC',
                     //'sort_column' => 'menu_order',
-                    'child_of' => get_the_ID()
+                    'child_of' => get_the_ID(),
                 );
-                $childList = get_pages($childArgs);
-                foreach ($childList as $child) { ?>
+                $child_list = get_pages( $child_args );
+                foreach ( $child_list as $child ) { ?>
 
-                    <article id="post-<?php echo $child->ID; ?>" <?php echo $child->post_class; ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                    <article id="post-<?php echo esc_attr( $child->ID ); ?>" <?php echo esc_attr( $child->post_class ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                         <h2 class="child-title"><?php echo $child->post_title; ?></h2>
                         <section class="entry-content" itemprop="articleBody">
                           <?php echo apply_filters( 'the_content', $child->post_content); ?>
