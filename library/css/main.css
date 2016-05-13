@@ -148,6 +148,7 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -158,8 +159,7 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto; }
+  hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -371,6 +371,8 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -411,6 +413,8 @@ table {
   border-spacing: 0; }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -509,8 +513,7 @@ p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
+  hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
@@ -1115,8 +1118,7 @@ a, a:visited {
   color: #ed3043;
   text-decoration: none;
   outline: none;
-  -webkit-transition: color 0.2s ease-in-out;
-          transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
@@ -1139,8 +1141,7 @@ a.button {
   padding: 10px 20px;
   font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  -webkit-transition: all 0.4s ease;
-          transition: all 0.4s ease; }
+  transition: all 0.4s ease; }
   a.button:hover {
     background: #ed3043;
     color: #fff; }
@@ -1172,7 +1173,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.2em;
   line-height: 1.35em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   font-weight: bold;
   border-top: 2px solid #eee;
   padding-top: 20px; }
@@ -1231,9 +1232,10 @@ HEADER STYLES
   background: #eee;
   border-top: 3px solid #ed3043;
   margin: 0;
-  -webkit-transition: 0.7s ease;
-          transition: 0.7s ease;
+  transition: 0.7s ease;
   text-align: center; }
+  #logo .h2 {
+    border: none; }
   #logo a {
     color: #333333; }
   #logo:hover {
@@ -1265,8 +1267,7 @@ body.active-mobile .header-nav {
       color: #fff;
       text-decoration: none;
       padding: 0.4em 1.5em;
-      -webkit-transition: 0.1s ease;
-              transition: 0.1s ease;
+      transition: 0.1s ease;
       outline: none; }
       .header nav li a:hover {
         color: #fff;
@@ -1314,13 +1315,11 @@ body.active-mobile .header-nav {
   font-size: 35px;
   box-sizing: content-box;
   cursor: pointer;
-  -webkit-transition: .2s ease-in-out;
-          transition: .2s ease-in-out; }
+  transition: .2s ease-in-out; }
   .show-nav:hover {
     color: #ed3043; }
   .active-mobile .show-nav {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
     margin-top: -5px; }
   @media (min-width: 768px) {
     .show-nav {
@@ -1399,12 +1398,10 @@ a.vcuarts-fallback {
 
 .vcu-color, .arts-color {
   opacity: 0;
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
+  transition: opacity .15s ease-in-out; }
 
 .vcu-dk, .arts-dk {
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
+  transition: opacity .15s ease-in-out; }
 
 .vcu-name {
   display: none; }
@@ -1441,7 +1438,7 @@ article {
 
 .page-title-head {
   padding: 0;
-  margin: 0; }
+  margin: 10px 0 10px 0; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1858,8 +1855,7 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
     color: #444 !important;
@@ -1895,3 +1891,5 @@ though, go for it.
   .respond-form,
   nav {
     display: none; } }
+
+/*# sourceMappingURL=main.css.map */

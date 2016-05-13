@@ -19,7 +19,10 @@ HEADER STYLES
     margin: 0;
     transition: 0.7s ease;
     text-align: center;
-    
+
+    .h2 {
+      border: none;
+    }
 
     a {
       color: $black;
