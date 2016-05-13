@@ -20,6 +20,10 @@ HEADER STYLES
     transition: 0.7s ease;
     text-align: center;
 
+    @include breakpoint($breakpoint-mobile) {
+      text-align: left;
+    }
+
     .h2 {
       border: none;
     }
