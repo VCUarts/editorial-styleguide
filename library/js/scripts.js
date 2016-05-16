@@ -110,5 +110,27 @@ $('.page_item').click(function(e) {
 });
   
 
+/*
+  * SCROLL TO TOP
+  */
+  var $scrollup = $('.scroll-up');
+
+  $scrollup.click(function () {
+    $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+  });
+
+  $(window).scroll(function() {
+
+  //scroll up button
+  if ( ( $(window).scrollTop() <= 500 ) ) {
+    $scrollup.removeClass('magic-appear');
+  } else {
+    $scrollup.addClass('magic-appear');
+ }
+});
+
 
 }); /* end of as page load scripts */

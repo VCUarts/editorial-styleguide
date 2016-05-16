@@ -116,7 +116,9 @@
 				</div>
 
 				<div class="show-nav">
-		          	<i class="fa fa-bars"></i>
-		          </div>
+        	<i class="fa fa-bars"></i>
+        </div>
+
+        <a href="javascript:void(0)" class="scroll-up"><i class="fa fa-angle-up fa-2x"></i></a>
 
 			</header>
