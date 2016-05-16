@@ -185,7 +185,9 @@ jQuery(document).ready(function($) {
 
   // Initialize all .smoothScroll links
   jQuery(function($) { 
-    $.localScroll({ filter: '.smoothScroll' }); 
+    $.localScroll({ 
+      target: 'body'
+    }); 
   });
 
 
