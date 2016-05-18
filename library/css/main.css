@@ -148,7 +148,6 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -159,7 +158,8 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  hyphens: auto; }
+  -ms-hyphens: auto;
+      hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -371,8 +371,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -413,8 +411,6 @@ table {
   border-spacing: 0; }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -1021,7 +1017,8 @@ body {
   padding-top: 4px;
   padding-left: 1px;
   opacity: 0;
-  transition: background-color 0.2s linear, color 0.2s linear;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+          transition: background-color 0.2s linear, color 0.2s linear;
   z-index: 5000;
   font-size: 0.8em; }
   @media (min-width: 1000px) {
@@ -1033,7 +1030,8 @@ body {
     opacity: 1; }
   .scroll-up .fa {
     color: #333333;
-    transition: color 0.2s linear; }
+    -webkit-transition: color 0.2s linear;
+            transition: color 0.2s linear; }
   .scroll-up:hover, .scroll-up:focus {
     background-color: #ed3043; }
     .scroll-up:hover .fa, .scroll-up:focus .fa {
@@ -1134,7 +1132,8 @@ a, a:visited {
   color: #ed3043;
   text-decoration: none;
   outline: none;
-  transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+          transition: color 0.2s ease-in-out;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
@@ -1157,7 +1156,8 @@ a.button {
   padding: 10px 20px;
   font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
-  transition: all 0.4s ease; }
+  -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease; }
   a.button:hover {
     background: #ed3043;
     color: #fff; }
@@ -1204,7 +1204,8 @@ h2, .h2 {
     color: #ccc;
     padding: 3px;
     border-radius: 3px;
-    transition: color 0.15s linear, border 0.15s linear; }
+    -webkit-transition: color 0.15s linear, border 0.15s linear;
+            transition: color 0.15s linear, border 0.15s linear; }
     h2 .edit-link a:hover, .h2 .edit-link a:hover {
       color: #555;
       border-color: #555; }
@@ -1263,7 +1264,8 @@ HEADER STYLES
   background: #eee;
   border-top: 3px solid #ed3043;
   margin: 0;
-  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+          transition: 0.7s ease;
   text-align: center; }
   @media (max-width: 767px) {
     #logo {
@@ -1301,7 +1303,8 @@ body.active-mobile .header-nav {
       color: #fff;
       text-decoration: none;
       padding: 0.4em 1.5em;
-      transition: 0.1s ease;
+      -webkit-transition: 0.1s ease;
+              transition: 0.1s ease;
       outline: none; }
       .header nav li a:hover {
         color: #fff;
@@ -1349,11 +1352,13 @@ body.active-mobile .header-nav {
   font-size: 35px;
   box-sizing: content-box;
   cursor: pointer;
-  transition: .2s ease-in-out; }
+  -webkit-transition: .2s ease-in-out;
+          transition: .2s ease-in-out; }
   .show-nav:hover {
     color: #ed3043; }
   .active-mobile .show-nav {
-    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     margin-top: -5px; }
   @media (min-width: 768px) {
     .show-nav {
@@ -1432,10 +1437,12 @@ a.vcuarts-fallback {
 
 .vcu-color, .arts-color {
   opacity: 0;
-  transition: opacity .15s ease-in-out; }
+  -webkit-transition: opacity .15s ease-in-out;
+          transition: opacity .15s ease-in-out; }
 
 .vcu-dk, .arts-dk {
-  transition: opacity .15s ease-in-out; }
+  -webkit-transition: opacity .15s ease-in-out;
+          transition: opacity .15s ease-in-out; }
 
 .vcu-name {
   display: none; }
@@ -1885,7 +1892,8 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    filter: none !important;
+    -webkit-filter: none !important;
+            filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
     color: #333333 !important;
@@ -1924,5 +1932,3 @@ though, go for it.
     #logo a {
       color: #000 !important;
       text-decoration: none !important; } }
-
-/*# sourceMappingURL=main.css.map */
