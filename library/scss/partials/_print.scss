@@ -19,8 +19,8 @@ though, go for it.
   }
 
   a, a:visited {
-    color: $f-red !important;
-    text-decoration: none;
+    color: $black !important;
+    text-decoration: underline;
   }
 
   pre, blockquote {
@@ -54,11 +54,28 @@ though, go for it.
       page-break-after: avoid;
     }
 
+    .entry-content {
+      font-size: 0.9em;
+    }
+
     // hide content people who print don't need to see
     .sidebar,
     .page-navigation,
     .wp-prev-next,
     .respond-form,
-    nav, .show-nav {
+    nav, 
+    .show-nav,
+    .edit-link,
+    .vcubar {
       display: none;
+    }
+
+    #logo {
+      border: none;
+      text-align: center !important;
+
+      a {
+        color: #000 !important;
+        text-decoration: none !important;
+      }
     }

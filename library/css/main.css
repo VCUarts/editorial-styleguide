@@ -1888,8 +1888,8 @@ though, go for it.
     filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
-    color: #ed3043 !important;
-    text-decoration: none; }
+    color: #333333 !important;
+    text-decoration: underline; }
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
@@ -1907,11 +1907,22 @@ though, go for it.
   h2,
   h3 {
     page-break-after: avoid; }
+  .entry-content {
+    font-size: 0.9em; }
   .sidebar,
   .page-navigation,
   .wp-prev-next,
   .respond-form,
-  nav, .show-nav {
-    display: none; } }
+  nav,
+  .show-nav,
+  .edit-link,
+  .vcubar {
+    display: none; }
+  #logo {
+    border: none;
+    text-align: center !important; }
+    #logo a {
+      color: #000 !important;
+      text-decoration: none !important; } }
 
 /*# sourceMappingURL=main.css.map */
