@@ -44,7 +44,7 @@
                 foreach ( $child_list as $child ) { ?>
 
                     <article id="post-<?php echo esc_attr( $child->ID ); ?>" <?php echo esc_attr( $child->post_class ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-                        <h2 class="child-title"><?php echo $child->post_title; ?></h2>
+                        <h2 class="child-title"><?php echo $child->post_title; ?><?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?></h2>
                         <section class="entry-content" itemprop="articleBody">
                           <?php echo apply_filters( 'the_content', $child->post_content); ?>
                         </section>
