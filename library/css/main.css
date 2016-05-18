@@ -1888,16 +1888,8 @@ though, go for it.
     filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
-    color: #444 !important;
-    text-decoration: underline; }
-    a:after, a:visited:after {
-      content: " (" attr(href) ")"; }
-    a abbr[title]:after, a:visited abbr[title]:after {
-      content: " (" attr(title) ")"; }
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: ""; }
+    color: #ed3043 !important;
+    text-decoration: none; }
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid; }
@@ -1919,7 +1911,7 @@ though, go for it.
   .page-navigation,
   .wp-prev-next,
   .respond-form,
-  nav {
+  nav, .show-nav {
     display: none; } }
 
 /*# sourceMappingURL=main.css.map */

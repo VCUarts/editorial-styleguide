@@ -19,24 +19,8 @@ though, go for it.
   }
 
   a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-
-    // show links on printed pages
-    &:after {
-      content: " (" attr(href) ")";
-    }
-
-    // show title too
-    abbr[title]:after {
-      content: " (" attr(title) ")";
-    }
-  }
-
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
+    color: $f-red !important;
+    text-decoration: none;
   }
 
   pre, blockquote {
@@ -75,6 +59,6 @@ though, go for it.
     .page-navigation,
     .wp-prev-next,
     .respond-form,
-    nav {
+    nav, .show-nav {
       display: none;
     }
