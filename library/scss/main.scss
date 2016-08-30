@@ -20,6 +20,10 @@ http://thesassway.com/advanced/modular-css-naming-conventions
 @import "../../bower_components/susy/sass/susy";
 @import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
 
+.hidden {
+  display: none;
+}
+
 $susy: (
   flow: ltr,
   math: fluid,

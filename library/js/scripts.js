@@ -49,6 +49,19 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
+  $('.main-content').searchable({
+    selector      : 'article',
+    childSelector : '.child-title',
+    searchField   : '.search-js',
+    hide          : function( elem ) {
+      elem.fadeOut(50);
+    },
+    show          : function( elem ) {
+      elem.fadeIn(50);
+    },
+    clearOnLoad: true
+  });
+
   //Mobile menu
   $('.show-nav').click(function(e) {
     e.preventDefault();  

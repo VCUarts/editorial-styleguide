@@ -65,6 +65,8 @@ temp/
 .Trashes
 
 .svn
+*.floo
+.flooignore
 
 *.codekit
 *.scssc

@@ -15,6 +15,10 @@ Helpful articles on Sass file organization:
 http://thesassway.com/advanced/modular-css-naming-conventions
 
 ******************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
+.hidden {
+  display: none; }
+
 /*********************
 IMPORTING PARTIALS
 These files are needed at the beginning so that we establish all
@@ -28,7 +32,6 @@ the whole project.
 /**
  * Correct `block` display not defined in IE 8/9.
  */
-@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
 article,
 aside,
 details,
@@ -1036,6 +1039,9 @@ body {
     background-color: #ed3043; }
     .scroll-up:hover .fa, .scroll-up:focus .fa {
       color: #fff; }
+
+.hidden {
+  display: none; }
 
 /********************
 WORDPRESS BODY CLASSES

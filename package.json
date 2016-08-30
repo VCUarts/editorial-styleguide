@@ -16,5 +16,8 @@
     "grunt-contrib-watch": "latest",
     "grunt-devcode": "latest",
     "grunt-sass": "latest"
+  },
+  "dependencies": {
+    "holmes.js": "^1.13.0"
   }
 }
