@@ -22,12 +22,16 @@
             onSearchEmpty: false,
             onSearchFocus: false,
             onSearchBlur: false,
-            clearOnLoad: false
+            clearOnLoad: false,
+            noResults: false
         },
         searchActiveCallback = false,
         searchEmptyCallback = false,
         searchFocusCallback = false,
         searchBlurCallback = false;
+
+    if(this.html=="") 
+        this.noResults = true;
 
     function isFunction(value) {
         return typeof value === 'function';

@@ -61,6 +61,7 @@
 					<?php endif;
 
 					?>
+			<div class= noResults> No Results Found </div>
 
 				</main>
 

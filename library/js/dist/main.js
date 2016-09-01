@@ -22,12 +22,16 @@
             onSearchEmpty: false,
             onSearchFocus: false,
             onSearchBlur: false,
-            clearOnLoad: false
+            clearOnLoad: false,
+            noResults: false
         },
         searchActiveCallback = false,
         searchEmptyCallback = false,
         searchFocusCallback = false,
         searchBlurCallback = false;
+
+    if(this.html=="") 
+        this.noResults = true;
 
     function isFunction(value) {
         return typeof value === 'function';
@@ -368,18 +372,25 @@ var timeToWaitForLast = 100;
 
 jQuery(document).ready(function($) {
 
+  $(".noResults").hide();
+
   $('.main-content').searchable({
     selector      : 'article',
     childSelector : '.child-title',
     searchField   : '.search-js',
     hide          : function( elem ) {
-      elem.fadeOut(50);
+      elem.hide(0,function(){
+        if ( !$('.main-content article:visible').length ) {
+        $(".noResults").show();
+        } else $(".noResults").hide();
+      });
     },
     show          : function( elem ) {
-      elem.fadeIn(50);
+      elem.show();
     },
     clearOnLoad: true
   });
+
 
   //Mobile menu
   $('.show-nav').click(function(e) {
