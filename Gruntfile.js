@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             }]
           },
           options: {
-            sourceMap: true,
+            sourceMap: false,
             outputStyle: 'nested',
             imagePath: "library/images",
           }

@@ -14,8 +14,6 @@
 		<title><?php wp_title( '' ); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
@@ -29,7 +27,7 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
     <meta name="theme-color" content="#121212">
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -37,20 +35,10 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
-		<?php // drop Google Analytics Here ?>
-		<?php // end analytics ?>
-
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
   
-			<div class="vcubar">
-			    <div class="inner-vcubar">
-			      <a href="http://vcu.edu" target="_blank" class="vcu"><?php include( TEMPLATEPATH . '/library/images/svg/logo-vcu.svg' ); ?></a>
-			      <a href="http://arts.vcu.edu" target="_blank" class="vcuarts"><?php include( TEMPLATEPATH . '/library/images/svg/logo-vcuarts.svg' ); ?></a>
-			    </div>
- 			 </div>
-
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header">
@@ -64,10 +52,10 @@
 
 					<nav role="navigation" class="header-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <?php
-                  $text_pages = array('resources', 'introduction');
+                  $text_pages = array( 'resources', 'introduction' );
 
                   $exclude = '';
-                  foreach ( $text_pages as $path ){
+                  foreach ( $text_pages as $path ) {
                     $page = get_page_by_path( $path );
                     $exclude .= $page->ID . ',';
                   }

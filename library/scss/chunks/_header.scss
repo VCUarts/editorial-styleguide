@@ -4,35 +4,35 @@ HEADER STYLES
 
 .header {
   background-color: $black;
+  margin-top: 43px;
 
   nav {
-  	a {
-  		color:$light-gray;
-  	}
+    a {
+      color: $light-gray;
+    }
   }
 }
 
 #logo {
-    padding: 30px;
-    background: #eee;
-    border-top: 3px solid $f-red;
-    margin: 0;
-    transition: 0.7s ease;
-    text-align: center;
+  padding: 30px;
+  background: #eee;
+  margin: 0;
+  transition: 0.7s ease;
 
-    @include breakpoint($breakpoint-mobile) {
-      text-align: left;
-    }
-
-    .h2 {
-      border: none;
-    }
-
-    a {
-      color: $black;
-    }
-
-    &:hover {
-      border-top-color:$gold;
-    }
+  @include breakpoint($breakpoint-mobile) {
+    text-align: left;
   }
+
+
+  .h2 {
+    border: none;
+  }
+
+  a {
+    color: $black;
+  }
+
+  &:hover {
+    border-top-color: $gold;
+  }
+}

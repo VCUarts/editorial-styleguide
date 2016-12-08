@@ -8,19 +8,7 @@
 
 						<article id="post-not-found" class="hentry">
 
-
-
-								<h1><?php _e( '404 Error', 'bonestheme' ); ?></h1>
-
-
-
-
-
-								<h3>Nothing was found.</h3>
-
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
-
+								<h3>Woops, nothing here!</h3>
 
 
 						</article>

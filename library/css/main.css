@@ -1103,11 +1103,13 @@ LAYOUT & GRID STYLES
     height: 100vh;
     overflow: auto; } }
 
-@media (min-width: 768px) {
-  #content {
-    width: 74.2857142857%;
-    float: right;
-    margin-right: 0; } }
+#content {
+  margin-top: 43px; }
+  @media (min-width: 768px) {
+    #content {
+      width: 74.2857142857%;
+      float: right;
+      margin-right: 0; } }
 
 #inner-footer {
   padding-left: 0.5em; }
@@ -1261,18 +1263,17 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #333333; }
+  background-color: #333333;
+  margin-top: 43px; }
   .header nav a {
     color: #f8f9fa; }
 
 #logo {
   padding: 30px;
   background: #eee;
-  border-top: 3px solid #ed3043;
   margin: 0;
   -webkit-transition: 0.7s ease;
-          transition: 0.7s ease;
-  text-align: center; }
+          transition: 0.7s ease; }
   @media (max-width: 767px) {
     #logo {
       text-align: left; } }
@@ -1372,97 +1373,28 @@ body.active-mobile .header-nav {
       visibility: hidden;
       right: -99999px; } }
 
-.vcubar {
-  padding-bottom: 10px;
-  position: relative; }
-  @media (min-width: 768px) {
-    .vcubar {
-      width: 74.2857142857%;
-      float: right;
-      margin-right: 0; } }
-  .vcubar a {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    height: 100%;
-    line-height: 40px; }
-    .vcubar a.vcu {
-      width: 346px; }
-      .vcubar a.vcu:hover .vcu-dk {
-        opacity: 0; }
-      .vcubar a.vcu:hover .vcu-color {
-        opacity: 1.0; }
-    .vcubar a.vcuarts {
-      width: 84px;
-      right: 2%; }
-      .vcubar a.vcuarts:hover .arts-dk {
-        opacity: 0; }
-      .vcubar a.vcuarts:hover .arts-color {
-        opacity: 1.0; }
-  .vcubar .inner-vcubar {
-    height: 2em;
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    padding-left: 0em;
-    padding-right: 0em;
-    padding-top: 5px; }
-    @media (max-width: 767px) {
-      .vcubar .inner-vcubar {
-        padding-left: 1em;
-        padding-right: 1em; } }
+/*********************
+VCU BAR
+*********************/
+.vcuarts-branding-bar {
+  background: #333333;
+  border-bottom: 3px solid #ed3043;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  display: block; }
+  .vcuarts-branding-bar a, .vcuarts-branding-bar a:active, .vcuarts-branding-bar a:visited {
+    border: none;
+    outline: none; }
 
-a.vcu-fallback {
-  display: none; }
-
-.no-svg a.vcu-fallback {
-  display: block;
-  background: url("../images/svg/fallbacks/logo-vcu-dk.png");
-  width: 346px;
-  height: 17px;
-  max-width: 60px; }
-  @media (min-width: 481px) {
-    .no-svg a.vcu-fallback {
-      max-width: 346px; } }
-  .no-mediaqueries .no-svg a.vcu-fallback {
-    max-width: 346px; }
-  .no-svg a.vcu-fallback:hover {
-    background: url("../images/svg/fallbacks/logo-vcu-color.png"); }
-
-a.vcuarts-fallback {
-  display: none; }
-
-.no-svg a.vcuarts-fallback {
-  display: block;
-  background: url("../images/svg/fallbacks/logo-vcuarts.png");
-  width: 84px;
-  height: 19px;
-  right: 2%; }
-  .no-svg a.vcuarts-fallback:hover {
-    background: url("../images/svg/fallbacks/logo-vcuarts-color.png"); }
-
-.vcu-color, .arts-color {
-  opacity: 0;
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
-
-.vcu-dk, .arts-dk {
-  -webkit-transition: opacity .15s ease-in-out;
-          transition: opacity .15s ease-in-out; }
-
-.vcu-name {
-  display: none; }
-  @media (min-width: 481px) {
-    .vcu-name {
-      display: block; } }
-  .no-mediaqueries .vcu-name {
-    display: block; }
+.vcuarts-branding-bar a.vcuarts-bar .arts-color {
+  fill: #fff; }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  padding-top: 0.5em;
+  padding-top: 1.5em;
   padding-bottom: 0.5em; }
   @media (max-width: 767px) {
     #content {
@@ -1507,11 +1439,11 @@ article {
   padding: 0.5em 0.5em 0 0;
   overflow: hidden;
   /*
-      image alignment on a screen this size may be
-      a bit difficult. It's set to start aligning
-      and floating images at the next breakpoint,
-      but it's up to you. Feel free to change it up.
-      */ }
+  image alignment on a screen this size may be
+  a bit difficult. It's set to start aligning
+  and floating images at the next breakpoint,
+  but it's up to you. Feel free to change it up.
+  */ }
   .entry-content p {
     margin: 0 0 1.5em; }
   .entry-content ul {

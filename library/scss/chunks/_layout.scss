@@ -15,6 +15,7 @@ LAYOUT & GRID STYLES
 }
 
 #content{
+  margin-top: 43px;
   @include breakpoint($breakpoint-desktop) {
     @include span(last 9 of 12);
   }
