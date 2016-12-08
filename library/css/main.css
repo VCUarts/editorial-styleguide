@@ -1862,8 +1862,16 @@ though, go for it.
   nav,
   .show-nav,
   .edit-link,
-  .vcubar {
-    display: none; }
+  .vcuarts-branding-bar,
+  .search {
+    display: none !important; }
+  .header {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    height: auto !important; }
   #logo {
     border: none;
     text-align: center !important; }

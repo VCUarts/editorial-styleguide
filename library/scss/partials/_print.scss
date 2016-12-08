@@ -66,8 +66,15 @@ though, go for it.
     nav, 
     .show-nav,
     .edit-link,
-    .vcubar {
-      display: none;
+    .vcuarts-branding-bar,
+    .search {
+      display: none !important;
+    }
+
+    .header {
+      @include span(full);
+      position: relative;
+      height: auto !important;
     }
 
     #logo {
