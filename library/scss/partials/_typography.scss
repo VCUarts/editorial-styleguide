@@ -15,8 +15,6 @@ http://alistapart.com/column/responsive-typography-is-a-physical-discipline
 
 ******************************************************************/
 
-@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
-
 /*********************
 FONT FACE (IN YOUR FACE)
 *********************/
@@ -29,17 +27,19 @@ FONT FACE (IN YOUR FACE)
   Be sure to remove the comment brackets.
 */
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
+  @font-face {
+      font-family: 'AktivGroteskRegular';
+      src: url('../fonts/AktivGrotesk_Rg.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
   }
-*/
+
+  @font-face {
+      font-family: 'AktivGroteskLight';
+      src: url('../fonts/AktivGrotesk_Lt.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+  }
 
 
 /*
@@ -50,6 +50,4 @@ I've edited it a bit, but it's a nice starting point.
 
 
 // font stacks
-$sans-serif:             "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+$sans-serif: "AktivGroteskLight", Times, Helvetica, sans-serif;
