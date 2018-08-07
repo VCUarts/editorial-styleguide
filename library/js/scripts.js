@@ -71,16 +71,16 @@ jQuery(document).ready(function($) {
 
   //Mobile menu
   $('.show-nav').click(function(e) {
-    e.preventDefault();  
-    $('body').toggleClass('active-mobile');        
+    e.preventDefault();
+    $('body').toggleClass('active-mobile');
   });
 
   // Initialize all .smoothScroll links
-  jQuery(function($) { 
-    $.localScroll({ 
-      target: 'body'
-    }); 
-  });
+  // jQuery(function($) { 
+  //   $.localScroll({
+  //     target: 'body'
+  //   });
+  // });
 
 
 // scrollspy init function
@@ -95,7 +95,7 @@ function initScrollSpy() {
         $('.page_item').each(function(i){
           $(this).removeClass('current');
         });
-        
+
         $('.'+element.id).addClass('current');
       }
     });
@@ -112,8 +112,8 @@ $(window).resize(function () {
   });
 
  waitForFinalEvent( function() {
-  initScrollSpy();     
- }, timeToWaitForLast, "setup that scrollspy again but not until we are done resizing that window"); 
+  initScrollSpy();
+ }, timeToWaitForLast, "setup that scrollspy again but not until we are done resizing that window");
 });
 
 
@@ -130,7 +130,7 @@ $('.children .page_item').on('click', function() {
 $('.page_item').click(function(e) {
   $(e.target).next('ul').slideToggle();
 });
-  
+
 
 /*
   * SCROLL TO TOP
