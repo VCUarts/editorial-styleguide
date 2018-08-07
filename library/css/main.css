@@ -1353,8 +1353,7 @@ body.active-mobile .header-nav {
   .show-nav:hover {
     color: #ed3043; }
   .active-mobile .show-nav {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
     margin-top: -5px; }
   @media (min-width: 768px) {
     .show-nav {
@@ -1819,8 +1818,7 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
     color: #333333 !important;

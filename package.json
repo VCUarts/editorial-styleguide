@@ -7,17 +7,18 @@
   },
   "devDependencies": {
     "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-concurrent": "latest",
-    "grunt-contrib-concat": "latest",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-devcode": "latest",
-    "grunt-sass": "latest"
+    "grunt-sass": "^2.1.0"
   },
   "dependencies": {
-    "holmes.js": "^1.13.0"
+    "holmes.js": "^1.13.0",
+    "node-sass": "^4.9.2"
   }
 }
