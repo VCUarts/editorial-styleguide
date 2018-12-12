@@ -14,8 +14,9 @@
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "^3.4.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-devcode": "latest",
-    "grunt-sass": "^2.1.0"
+    "grunt-devcode": "0.0.4",
+    "grunt-sass": "^2.1.0",
+    "minimatch": "^3.0.4"
   },
   "dependencies": {
     "holmes.js": "^1.13.0",
